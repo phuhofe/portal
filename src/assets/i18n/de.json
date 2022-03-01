@@ -1,0 +1,58 @@
+{
+  "hello": "hello",
+  "portalPage": {
+    "a11y": {
+      "skipToMain": "",
+      "i18n": {
+        "languageSelector": ""
+      }
+    },
+    "header": {
+      "pageName": "",
+      "logo":{
+        "alt": "logo"
+      }
+    },
+    "button": {
+      "mainMenu": "Main menu updating",
+      "advancedSearch": "Advanced search",
+      "loadMore": "Load more",
+      "loadingMore": "Loading more ..."
+    },
+    "text": {
+      "searchResultNational": "Search Result National",
+      "noData": "No data to show"
+    },
+    "filter": {
+      "filter": "Filter",
+      "filterBy": "Filter by",
+      "memorialPage": "Gedenkseite",
+      "haveDonation": "Spende",
+      "hasDeathNotice": "Has death notice",
+      "hasFlowerShop": "Blumengeschäft"
+    },
+    "sort": {
+      "sort": "Sort",
+      "sortBy": "Sort by",
+      "dateOfBirth": "Geboren",
+      "dateOfDeath": "Gestorben"
+    },
+    "inputField": {
+      "firstname": "Vorname",
+      "lastname": "Familienname",
+      "birthdateRange": "Geboren range",
+      "deathDateRange": "Gestorben range",
+      "city": "Stadt",
+      "region": "Region"
+    },
+    "error": {
+      "invalidDate": "Sie haben ein ungültiges Datum oder Jahr eingegeben. Geben Sie ein gültiges Datum oder Jahr ein und versuchen Sie es nochmals."
+    },
+    "userList": {
+      "deathNotice": "Death notice",
+      "memorialPage": "Gedenkseite",
+      "donate": "Donate",
+      "flowerShop": "Flower shop"
+    }
+  }
+}

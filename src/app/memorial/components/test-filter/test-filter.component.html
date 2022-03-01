@@ -1,0 +1,18 @@
+<div class="test-filer">
+  <p class="p-3">Parent component</p>
+
+  <button mat-flat-button color="primary" (click)="usingCustomTemplate = !usingCustomTemplate">Enable</button>
+
+
+  <app-filter [usingCustomTemplate]="usingCustomTemplate">
+    <div custom>
+      <div class="p-2 d-flex">
+        <input class="form-control mx-2" type="text" placeholder="First name">
+        <input class="form-control mx-2" type="text" placeholder="Last name">
+        <input class="form-control mx-2" type="text" placeholder="birthdate range">
+        <input class="form-control mx-2" type="text" placeholder="death date name">
+      </div>
+    </div>  
+  </app-filter>
+
+</div>

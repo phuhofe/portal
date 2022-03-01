@@ -1,0 +1,28 @@
+<app-card>
+  <div cardTitle> Search</div>
+  <div cardSubtitle>
+    Change the lorem ipsum dolor sit amet. Setting are available lorem.
+  </div>
+  <div cardBody>
+    <table class="table table-borderless">
+      <thead>
+      <tr>
+        <th class="ps-0">Type</th>
+        <th>Available</th>
+        <th class="text-center">Default</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let type of types" class="table-row">
+        <td class="ps-0">{{ type.name }}</td>
+        <td class="pt-0">
+          <app-toggle [checked]="type.isAvailable"></app-toggle>
+        </td>
+        <td class="float-right pt-0">
+          <app-checkbox [checked]="type.isDefault"></app-checkbox>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</app-card>

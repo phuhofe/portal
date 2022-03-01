@@ -1,0 +1,72 @@
+.check-icon:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 2px;
+  width: 6px;
+  height: 17px;
+  border: solid #4F4F4F;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.toggle-container {
+  height: 32px;
+  width: 64px;
+  background: #F2F2F2;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .check {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .uncheck {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    border-radius: 4px;
+    background: #4F4F4F;
+    color: #FFFFFF;
+  }
+
+  &.checked {
+    background: #F4ECF9;
+    border: 1px solid #EAD9F2;
+
+    .check {
+      background: var(--adstate-primary-gradient);
+      color: #FFFFFF;
+    }
+
+    .check-icon:after {
+      border: solid var(--adstate-primary-100);
+      border-width: 0 2px 2px 0;
+    }
+
+    .uncheck {
+      background: transparent;
+      color: var(--adstate-primary-800);
+    }
+  }
+}
+
+.uncheck-icon:before {
+  position: relative;
+  top: 1px;
+}
+

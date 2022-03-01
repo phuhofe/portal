@@ -1,0 +1,60 @@
+.logo {
+  height: 50px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.language-select {
+  width: 10rem;
+}
+
+.menu {
+  z-index: 2;
+  position: absolute;
+  width: fit-content;
+  right: 0;
+
+  .menu-group {
+    float: right;
+  }
+}
+
+.main-menu-button {
+  border-radius: 0.5rem;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.visually-hidden-focusable {
+  left: -100%;
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+#skip-to-main-content:focus,
+#skip-to-main-content:active {
+  display: inline-block;
+  top: 1em;
+  left: 1em;
+  width: auto;
+  height: auto;
+  margin: auto;
+  padding: 0.8em 1.6em;
+  text-align: center;
+  border-radius: 0.4em;
+  z-index: 999;
+  color: #fff;
+  background-color: var(--bs-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}

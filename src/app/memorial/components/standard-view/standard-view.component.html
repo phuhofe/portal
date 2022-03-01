@@ -1,0 +1,74 @@
+<div class="standard-container" *ngIf="users && users.length > 0">
+  <ul class="p-0 user-list" data-cy="user-list">
+    <li *ngFor="let user of users | slice:0: end; let i = index; trackBy: trackByMethod; let index=index;"
+        class="d-flex justify-content-between align-items-centers item">
+      <div class="d-flex information">
+
+        <img [hidden]="!imageLoader" src="/assets/images/loading.gif" alt="">
+        <img src="{{user.photoUrl}}" #imageElement
+             [hidden]="imageLoader"
+             (load)="onLoadImage()"
+             (error)="handleErrorImage(imageElement)"
+             alt=""
+             class="user-thumbnail">
+
+        <ng-template #noPhoto>
+          <div class="user-thumbnail" style="background: #C4C4C4"></div>
+        </ng-template>
+
+        <div class="d-flex flex-column mt-2 ml-3 ms-3" data-cy="user-item">
+          <h3 class="fs-5 mb-0">
+            <a [href]="user.memorialPage.url !== '' ? user.memorialPage.url : ''"
+               class="text-decoration-none"
+               [attr.aria-label]="user.firstName + ' ' +  user.lastName + ' (' + user.birthdate + ' - ' + user.deathdate + ')'">
+              {{ user.firstName }} {{ user.lastName }}
+            </a>
+          </h3>
+          <p class="mb-0">
+            <span data-cy="user-birthdate">{{ user.birthdate | date:"YYYY" }}</span>
+            - <span data-cy="user-death-date">{{ user.deathdate | date:"dd.MM.YYYY"}}</span>
+          </p>
+        </div>
+      </div>
+
+      <ul class="user-list-item-features">
+        <li class="user-list-item-feature">
+          <a data-cy="death-notice-link"
+             [href]="user.deathNotice.url"
+             [attr.disabled]="user.deathNotice.url === '' ? true : null"
+             [attr.aria-label]="('portalPage.userList.deathNoticeForUser' | transloco:{ name: user.firstName })">
+            <img [src]="deathNoticeIcon" alt="">
+            <span>{{ 'portalPage.userList.deathNotice' | transloco }}</span>
+          </a>
+        </li>
+        <li class="user-list-item-feature">
+          <a [href]="user.memorialPage.url"
+             [attr.disabled]="user.memorialPage.url === '' ? true : null"
+             [attr.aria-label]="('portalPage.userList.memorialPageForUser' | transloco:{ name: user.firstName })"
+             data-cy="memorial-page-link">
+            <img [src]="candleFilterIcon" alt="" data-cy="memorial-page-icon">
+            <span>{{ 'portalPage.userList.memorialPage' | transloco }}</span>
+          </a>
+        </li>
+        <li class="user-list-item-feature">
+          <a [href]="user.donation.url"
+             [attr.disabled]="user.donation.url === '' ? true : null"
+             [attr.aria-label]="('portalPage.userList.donateForUser' | transloco:{ name: user.firstName })"
+             data-cy="donation-link">
+            <img [src]="donationFilterIcon" alt="" data-cy="donation-icon">
+            <span>{{ 'portalPage.userList.donate' | transloco }}</span>
+          </a>
+        </li>
+        <li class="user-list-item-feature">
+          <a [href]="user.flowerShop.url"
+             [attr.disabled]="user.flowerShop.url === '' ? true : null"
+             [attr.aria-label]="('portalPage.userList.flowerShopForUser' | transloco:{ name: user.firstName })"
+             data-cy="flower-shop-link">
+            <img [src]="flowerFilterIcon" alt="">
+            <span>{{ 'portalPage.userList.flowerShop' | transloco }}</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

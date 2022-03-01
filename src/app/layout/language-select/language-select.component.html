@@ -1,0 +1,34 @@
+<div class="btn-group" dropdown>
+
+  <button id="button-basic" dropdownToggle 
+          type="button" 
+          class="language-button dropdown-toggle"
+          aria-controls="dropdown-basic">
+    <img class="flag" 
+        [src]="selectedLanguage.flag" 
+        [alt]="selectedLanguage.label + 'flag'"> 
+    {{ selectedLanguage.label }}
+  </button>
+
+  <ul id="dropdown-basic" *dropdownMenu 
+      class="dropdown-menu"
+      role="menu" 
+      aria-labelledby="button-basic">
+
+    <li role="menuitem">
+      <div class="dropdown-item first-item">
+        <img class="flag" [src]="selectedLanguage.flag" 
+             [alt]="selectedLanguage.label">
+        <span class="mx-2"> {{ selectedLanguage.label }} </span>
+      </div>
+    </li>
+
+    <li role="menuitem" *ngFor="let item of languageOptions">
+      <div class="dropdown-item" (click)="onSelectLanguageItem(item)">
+        <img class="flag" [src]="item.flag" [alt]="item.label">
+        <span class="mx-2"> {{ item.label }} </span>
+      </div>
+    </li>
+  </ul>
+
+</div>

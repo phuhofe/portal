@@ -1,0 +1,146 @@
+$adstate-main-color: var(--bs-primary);
+$adstate-main-color-rgba: rgba(105, 45, 135, 0.2);
+$white: #FFFFFF;
+
+.user-list {
+  margin-top: -6rem;
+}
+
+.search-bar {
+  max-width: 700px;
+}
+
+.list-container .list-container-thumbnail {
+  background-size: cover;
+  background-repeat: round;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+}
+
+.form-select {
+  height: 30px;
+  font-size: 14px;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.btn-custom {
+  height: 39px;
+  background: $adstate-main-color;
+  color: #C0B59E;
+  box-shadow: 0 4px 4px rgba($adstate-main-color, 0.25);
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .view-container-thumbnail {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    opacity: 0.5;
+    background-size: cover;
+  }
+
+  .view {
+    z-index: 2;
+  }
+}
+
+.actions {
+  left: 1rem;
+  font-size: 1.25rem;
+}
+
+
+.btn-primary.dropdown-toggle {
+  background-color: $adstate-main-color;
+  border-color: $adstate-main-color;
+
+  &:hover {
+    background-color: $adstate-main-color;
+    border-color: $adstate-main-color;
+  }
+}
+
+.sort-filter-container {
+  display: flex;
+}
+
+.sort,
+.filter {
+  min-width: 200px;
+  width: 200px;
+
+  ::ng-deep {
+    .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected {
+      background-color: $adstate-main-color-rgba;
+    }
+
+    .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+      background-color: $adstate-main-color-rgba;
+    }
+
+    .ng-select-container.ng-has-value {
+      border-color: $adstate-main-color;
+      box-shadow: none;
+    }
+  }
+}
+
+.load-more-btn {
+  width: 25%;
+}
+
+.container.sort-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sort-container {
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .load-more-btn {
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 765px) {
+  .sort-container {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 698px) {
+  .container.sort-filter {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .sort-filter-container {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .sort-container,
+  .filter-container,
+  .filter,
+  .sort {
+    width: 100%;
+  }
+
+  .sort-container {
+    margin: 1rem 0;
+  }
+}

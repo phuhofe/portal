@@ -1,0 +1,27 @@
+<div class="input-group mb-1 adstate-input">
+  <input [attr.id]="labelForId ? labelForId : null"
+         placeholder="{{ placeholder }}"
+         class="form-control shadow-none"
+         [ngClass]="{'border-danger': isInvalidDate}"
+
+         mask="{{ maskInput }}"
+         [leadZeroDateTime]="true"
+
+         bsDaterangepicker
+         #datePicker="bsDaterangepicker"
+         placement="{{ datepickerPlacement }}"
+         (change)="onTypingDate($event.target.value)"
+         (bsValueChange)="onValueChange($event)"
+         [bsConfig]="datePickerConfig"
+         [maxDate]="today"
+         data-cy="date-range-input"
+        >
+
+  <span class="input-group-text" (click)="datePicker.show()" data-cy="date-range-button-trigger">
+    <i class="bi bi-calendar4"></i>
+  </span>
+</div>
+
+<div *ngIf="isInvalidDate">
+  <small class="text-danger ms-1"> {{ wrongDateFormatMessage }} </small>
+</div>

@@ -1,0 +1,24 @@
+<div>
+  <img *ngIf="!imageChangedEvent && croppedImage" 
+        src="{{croppedImage}}" alt=""
+        class="w-100">
+  
+  <image-cropper 
+    *ngIf="imageChangedEvent"
+    class="p-0"
+    format="png"
+    [imageChangedEvent]="imageChangedEvent"
+    [alignImage]="'left'"
+    [maintainAspectRatio]="true"
+    [hideResizeSquares]="true"
+    [aspectRatio]="16 / 6"
+    [autoCrop]="true"
+    
+    (imageCropped)="imageCropped($event)">
+  </image-cropper>
+</div>
+
+
+
+
+

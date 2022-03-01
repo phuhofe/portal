@@ -1,0 +1,37 @@
+<div class="m-5 filter-container">
+  
+  <div class="filter-field-padding" fxLayout="row" fxLayoutAlign="end center">
+    <button mat-button (click)="toggleFilter()" class="filter-button"
+      [ngClass]="isCollapsed ? 'mat-flat-button' : 'mat-stroked-button'" color="primary">
+      Filter <i class="bi bi-funnel"></i>
+    </button>
+  </div>
+
+
+
+  <div class="content" [ngClass]="{'active': isCollapsed}">
+
+    <div *ngIf="usingCustomTemplate else defaultTemplate">
+      <ng-container *ngTemplateOutlet="customTemplate"></ng-container>
+    </div>
+
+    <ng-template #defaultTemplate>
+      
+    </ng-template>
+
+  
+    <ng-template #customTemplate>
+      <ng-content select="[custom]"></ng-content>
+    </ng-template>
+
+    <div class="action">
+      <button mat-stroked-button (click)="clearFilterForm()">Clear</button>
+      <button mat-flat-button color="primary" class="total-result ms-3"> 
+       <strong> {{ totalSearchResult | number : '4.0' }} </strong> results 
+      </button>
+    </div>
+
+
+  </div>
+
+</div>

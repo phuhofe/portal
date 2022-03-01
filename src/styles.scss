@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&;500display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import 'variables';
+
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons';
+
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+
+* {
+  font-family: 'Raleway', sans-serif;
+  //color: #333;
+}
+
+html, body {
+  height: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+
+  &:hover, &:focus {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+  }
+}
+
+
+.adstate-input {
+  height: 63px;
+
+  &:hover, &:focus {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+}
+
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/materialicons/v70/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import './styles/adstate-theme.scss';

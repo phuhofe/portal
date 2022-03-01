@@ -1,0 +1,143 @@
+<form [formGroup]="filterForm">
+
+  <div class="filter-field-padding" fxLayout="row" fxLayoutAlign="end center">
+    <button mat-button (click)="toggleFilter()" class="filter-button"
+      [ngClass]="isCollapsed ? 'mat-flat-button' : 'mat-stroked-button'" color="primary">
+      Filter <i class="bi bi-funnel"></i>
+    </button>
+  </div>
+
+  <div class="content" [ngClass]="{'active': isCollapsed}">
+
+    <div *ngIf="usingCustomTemplate else defaultTemplate">
+      <ng-container *ngTemplateOutlet="customTemplate"></ng-container>
+    </div>
+
+    <ng-template #defaultTemplate>
+      <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+        <div class="filter-field-padding" fxFlex="25%">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>First name</mat-label>
+            <input matInput placeholder="First name" formControlName="firstName">
+          </mat-form-field>
+        </div>
+
+        <div class="filter-field-padding" fxFlex="25%">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Last name</mat-label>
+            <input matInput placeholder="Last name" formControlName="lastName">
+          </mat-form-field>
+        </div>
+
+        <div class="filter-field-padding" fxFlex="25%">
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <mat-label>Birthdate date range</mat-label>
+            <mat-date-range-input [rangePicker]="birthdateRangePicker">
+              <input matStartDate placeholder="Start date" formControlName="birthdateFrom">
+              <input matEndDate placeholder="End date"  formControlName="birthdateTo">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="birthdateRangePicker"></mat-datepicker-toggle>
+            <mat-date-range-picker #birthdateRangePicker>
+              <mat-date-range-picker-actions>
+                <button mat-button matDateRangePickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDateRangePickerApply>
+                  Apply
+                </button>
+              </mat-date-range-picker-actions>
+            </mat-date-range-picker>
+          </mat-form-field>
+        </div>
+
+        <div class="filter-field-padding" fxFlex="25%">
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <mat-label>Deathdate date range</mat-label>
+            <mat-date-range-input [rangePicker]="deathdateRangePicker">
+              <input matStartDate placeholder="Start date" formControlName="deathdateFrom">
+              <input matEndDate placeholder="End date" formControlName="deathdateTo">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="deathdateRangePicker"></mat-datepicker-toggle>
+            <mat-date-range-picker #deathdateRangePicker>
+              <mat-date-range-picker-actions>
+                <button mat-button matDateRangePickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDateRangePickerApply>
+                  Apply
+                </button>
+              </mat-date-range-picker-actions>
+            </mat-date-range-picker>
+
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+        <div class="filter-field-padding" fxFlex="50%">
+
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Cities</mat-label>
+            <input type="text" placeholder="Cities" matInput (click)="onOpenCitySelect()" formControlName="city"
+              [matAutocomplete]="cityAuto">
+            <mat-autocomplete autoActiveFirstOption #cityAuto="matAutocomplete" (optionSelected)="onSelectCity($event)">
+              <mat-option *ngFor="let option of filteredCityOptions | async" [value]="option.name">
+                {{option.name}}
+              </mat-option>
+            </mat-autocomplete>
+
+            <button *ngIf="!filterForm.controls['city'].value" matSuffix mat-icon-button aria-label="open-region"
+              (click)="onOpenCitySelect()">
+              <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+
+            <button *ngIf="filterForm.controls['city'].value" matSuffix mat-icon-button aria-label="Clear"
+              (click)="clearCitySelect()">
+              <mat-icon>close</mat-icon>
+            </button>
+
+          </mat-form-field>
+        </div>
+
+        <div class="filter-field-padding" fxFlex="50%">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Regions</mat-label>
+            <input type="text" placeholder="Pick one" matInput (click)="onOpenRegionSelect()" formControlName="region"
+              [matAutocomplete]="regionAuto">
+            <mat-autocomplete autoActiveFirstOption #regionAuto="matAutocomplete"
+              (optionSelected)="onSelectRegion($event)">
+              <mat-option *ngFor="let option of filteredRegionOptions | async" [value]="option">
+                {{option.name}}
+              </mat-option>
+            </mat-autocomplete>
+
+            <button *ngIf="!filterForm.controls['region'].value" matSuffix mat-icon-button aria-label="open-region"
+              (click)="onOpenRegionSelect()">
+              <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+
+            <button *ngIf="filterForm.controls['region'].value" matSuffix mat-icon-button aria-label="Clear"
+              (click)="clearRegionSelect()">
+              <mat-icon>close</mat-icon>
+            </button>
+
+          </mat-form-field>
+        </div>
+
+      </div>
+    </ng-template>
+
+
+    <ng-template #customTemplate>
+      <ng-content select="[custom]"></ng-content>
+    </ng-template>
+
+    <div class="action">
+      <button mat-stroked-button (click)="clearFilterForm()">
+        Clear
+      </button>
+
+      <button mat-flat-button color="primary" class="total-result ms-3">
+        <strong> {{ totalSearchResult | number : '4.0' }} </strong> results
+      </button>
+    </div>
+
+  </div>
+
+</form>

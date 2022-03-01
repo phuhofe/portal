@@ -1,0 +1,21 @@
+.color-picker {
+  width: max-content;
+  padding: 2px 5px;
+  border: 1px solid var(--adstate-primary-500);
+  border-radius: 8px;
+
+  input[type="color"] {
+    opacity: 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: none;
+  }
+
+  #color-picker-wrapper {
+    float: left;
+    background: var(--adstate-primary-500);
+    border-radius: 8px;
+  }
+
+}

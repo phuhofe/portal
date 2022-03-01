@@ -1,0 +1,56 @@
+{
+  "portalPage": {
+    "i18n": {
+      "languageSelector": ""
+    },
+    "header": {
+      "skipToMain": "",
+      "pageName": "",
+      "logo": {
+        "alt": "logo"
+      }
+    },
+    "button": {
+      "mainMenu": "Main menu updating",
+      "advancedSearch": "Advanced search",
+      "loadMore": "Load more",
+      "loadingMore": "Loading more result ...",
+      "search": "Search"
+    },
+    "text": {
+      "searchResultNational": "Search Result National",
+      "noData": "No data to show"
+    },
+    "filter": {
+      "filter": "Filter",
+      "filterBy": "Filter by",
+      "memorialPage": "Memorial page",
+      "haveDonation": "Have donation",
+      "hasDeathNotice": "Has death notice",
+      "hasFlowerShop": "Has flower shop"
+    },
+    "sort": {
+      "sort": "Sort",
+      "sortBy": "Sort by",
+      "dateOfBirth": "Date of birth",
+      "dateOfDeath": "Date of death"
+    },
+    "inputField": {
+      "firstname": "First name",
+      "lastname": "Last name",
+      "birthdateRange": "Birthdate range",
+      "deathDateRange": "Death date range",
+      "city": "City",
+      "region": "Region"
+    },
+    "error": {
+      "invalidDate": ""
+    },
+    "userList": {
+      "deathNotice": "Death notice",
+      "memorialPage": "Memorial page",
+      "donate": "Donate",
+      "flowerShop": "Flower shop"
+    }
+  }
+}

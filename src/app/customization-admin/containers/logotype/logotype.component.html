@@ -1,0 +1,20 @@
+<app-card>
+  <div cardTitle> Logotype</div>
+  <div cardSubtitle>
+    Upload your logotype to be displayed on the portal page.
+  </div>
+  <div cardBody>
+
+    <div class="logo-container"
+         [ngClass]=" isCenter ? 'logo-center' : 'logo-left' ">
+      <img src="assets/images/logo.png" alt="">
+    </div>
+
+    <div class="text-center mt-3">
+      <i class="bi bi-text-left icon me-3" (click)="isCenter = false"></i>
+      <i class="bi bi-text-center icon" (click)="isCenter = true"></i>
+      <i class="bi bi-trash icon trash-icon"></i>
+    </div>
+
+  </div>
+</app-card>

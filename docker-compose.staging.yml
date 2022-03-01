@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  adstate-portal-frontend-staging:
+    image: adstate/java-hut:adstate-portal-frontend-staging
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: staging
+    ports:
+      - 4200:4200
+    ## set your startup file here
+    command: [nginx-debug, '-g', 'daemon off;']

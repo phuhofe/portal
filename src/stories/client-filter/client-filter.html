@@ -1,0 +1,19 @@
+<adstate-advanced-filter [usingCustomTemplate]="usingCustomTemplate" (clear)="onClear($event)"
+  (filterParam)="onSearchParam($event)">
+  <div custom>
+
+    <form [formGroup]="customFilterForm">
+
+      <div class="p-2 d-flex">
+        <input formControlName="firstName" class="form-control mx-2" type="text" placeholder="First name">
+        <input formControlName="lastName" class="form-control mx-2" type="text" placeholder="Last name">
+        <input formControlName="birthdateRange" class="form-control mx-2" type="text" placeholder="birthdate range">
+        <input formControlName="birthdateRange" class="form-control mx-2" type="text" placeholder="death date range">
+        <input formControlName="city" class="form-control mx-2" type="text" placeholder="City">
+        <input formControlName="region" class="form-control mx-2" type="text" placeholder="Region">
+      </div>
+
+    </form>
+    
+  </div>
+</adstate-advanced-filter>

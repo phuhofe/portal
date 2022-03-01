@@ -1,0 +1,9 @@
+<div class="toggle-container"
+    [ngClass]="{'checked': checked}">
+  <div class="check text-center" (click)="checked = true;">
+    <i class="check-icon"></i>
+  </div>
+  <div class="uncheck text-center" (click)="checked = false;">
+    <i class="bi bi-x-lg uncheck-icon"></i>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+:root {
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey: #828282;
+  --color-light-grey: #cccccc;
+  --color-purple-gradient-500: #c43eff;
+  --color-purple-liner: linear-gradient(98.09deg, #C43EFF 0%, #8337F6 100%);
+
+  --color-shade-100: #f9f9fb;
+  --color-shade-200: #f4f4f6;
+  --color-shade-300: #d8d8df;
+  --color-shade-400: #bcbcc8;
+  --color-shade-500: #a0a0b1;
+  --color-shade-600: #84849a;
+  --color-shade-700: #6a6a81;
+  --color-shade-800: #535365;
+  --color-shade-900: #3c3c49;
+  --color-shade-dark-grey: #666666;
+
+
+
+  --color-purple-900: hsl(280, 50%, 10%);
+  --color-purple-800: hsl(280, 50%, 20%);
+  --color-purple-700: hsl(280, 50%, 30%);
+  --color-purple-600: hsl(280, 50%, 40%);
+  --color-purple-500: hsl(280, 50%, 50%);
+  --color-purple-400: hsl(280, 50%, 60%);
+  --color-purple-300: hsl(280, 50%, 70%);
+  --color-purple-200: hsl(280, 50%, 80%);
+  --color-purple-100: hsl(280, 50%, 90%);
+  --color-purple-50: hsl(280, 50%, 95%);
+
+
+
+  --color-red-900: hsl(360, 50%, 10%);
+  --color-red-800: hsl(360, 50%, 20%);
+  --color-red-700: hsl(360, 50%, 30%);
+  --color-red-600: hsl(360, 50%, 40%);
+  --color-red-500: hsl(360, 50%, 50%);
+  --color-red-400: hsl(360, 50%, 60%);
+  --color-red-300: hsl(360, 50%, 70%);
+  --color-red-200: hsl(360, 50%, 80%);
+  --color-red-100: hsl(360, 50%, 90%);
+  --color-red-50: hsl(360, 50%, 95%);
+
+
+
+  --color-green-900: hsl(150, 50%, 10%);
+  --color-green-800: hsl(150, 50%, 20%);
+  --color-green-700: hsl(150, 50%, 30%);
+  --color-green-600: hsl(150, 50%, 40%);
+  --color-green-500: hsl(150, 50%, 50%);
+  --color-green-400: hsl(150, 50%, 60%);
+  --color-green-300: hsl(150, 50%, 70%);
+  --color-green-200: hsl(150, 50%, 80%);
+  --color-green-100: hsl(150, 50%, 90%);
+  --color-green-50: hsl(150, 50%, 95%);
+
+
+
+  --adstate-purple-50: var(--color-purple-50);
+  --adstate-purple-100: var(--color-purple-100);
+  --adstate-purple-200: var(--color-purple-200);
+  --adstate-purple-300: var(--color-purple-300);
+  --adstate-purple-500: var(--color-purple-500);
+  --adstate-purple-500: var(--color-purple-500);
+  --adstate-purple-600: var(--color-purple-600);
+  --adstate-purple-700: var(--color-purple-700);
+  --adstate-purple-800: var(--color-purple-800);
+  --adstate-purple-900: var(--color-purple-900);
+
+
+
+  --adstate-red-50: var(--color-red-50);
+  --adstate-red-100: var(--color-red-100);
+  --adstate-red-200: var(--color-red-200);
+  --adstate-red-300: var(--color-red-300);
+  --adstate-red-400: var(--color-red-400);
+  --adstate-red-500: var(--color-red-500);
+  --adstate-red-600: var(--color-red-600);
+  --adstate-red-700: var(--color-red-700);
+  --adstate-red-800: var(--color-red-800);
+  --adstate-red-900: var(--color-red-900);
+
+
+
+  --adstate-green-50: var(--color-green-50);
+  --adstate-green-100: var(--color-green-100);
+  --adstate-green-200: var(--color-green-200);
+  --adstate-green-300: var(--color-green-300);
+  --adstate-green-400: var(--color-green-400);
+  --adstate-green-500: var(--color-green-500);
+  --adstate-green-600: var(--color-green-600);
+  --adstate-green-700: var(--color-green-700);
+  --adstate-green-800: var(--color-green-800);
+  --adstate-green-900: var(--color-green-900);
+
+
+
+  --adstate-shade-100: var(--color-shade-100);
+  --adstate-shade-200: var(--color-shade-200);
+  --adstate-shade-300: var(--color-shade-300);
+  --adstate-shade-400: var(--color-shade-400);
+  --adstate-shade-500: var(--color-shade-500);
+  --adstate-shade-600: var(--color-shade-600);
+  --adstate-shade-700: var(--color-shade-700);
+  --adstate-shade-800: var(--color-shade-800);
+  --adstate-shade-900: var(--color-shade-900);
+  --adstate-shade-dark-grey: var(--color-shade-dark-grey);
+
+  --adstate-card-shadow: 0 20px 32px -10px rgba(19, 17, 20, 0.15);
+  --adstate-drop-shadow: drop-shadow(-2px 4px 2px var(--adstate-primary-100));
+  --adstate-primary-gradient-500: var(--color-purple-gradient-500);
+  --adstate-primary-gradient: var(--color-purple-liner);
+
+}

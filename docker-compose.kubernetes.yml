@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  adstate-portal-frontend-kubernetes:
+    image: adstate/java-hut:adstate-portal-frontend-kubernetes
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: kubernetes
+    ports:
+      - 4200:4200
+    ## set your startup file here
+    command: [nginx-debug, '-g', 'daemon off;']

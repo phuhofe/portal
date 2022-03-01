@@ -1,0 +1,105 @@
+@import '~@angular/material/theming';
+@include mat-core(); 
+
+$adstate-purple: (
+    50: var(--adstate-purple-50),
+    100: var(--adstate-purple-100),
+    200: var(--adstate-purple-200),
+    300: var(--adstate-purple-300),
+    400: var(--adstate-purple-400),
+    500: var(--adstate-purple-500),
+    600: var(--adstate-purple-600),
+    700: var(--adstate-purple-700),
+    800: var(--adstate-purple-800),
+    900: var(--adstate-purple-900),
+    A100: var(--adstate-purple-100),
+    A200: var(--adstate-purple-200),
+    A400: var(--adstate-purple-400),
+    A700: var(--adstate-purple-500),
+    contrast: (
+        50: var(--adstate-shade-100),
+        100: var(--adstate-shade-100),
+        200: var(--adstate-shade-200),
+        300: var(--adstate-shade-300),
+        400: var(--adstate-shade-400),
+        500: var(--adstate-shade-100),
+        600: var(--adstate-shade-200),
+        700: var(--adstate-shade-300),
+        800: var(--adstate-shade-800),
+        900: var(--adstate-shade-900),
+        A100: var(--adstate-shade-100),
+        A200: var(--adstate-shade-200),
+        A400: var(--adstate-shade-400),
+        A700: var(--adstate-shade-100),
+    )
+);
+
+$adstate-red: (
+    50: var(--adstate-red-50),
+    100: var(--adstate-red-100),
+    200: var(--adstate-red-200),
+    300: var(--adstate-red-300),
+    400: var(--adstate-red-400),
+    500: var(--adstate-red-500),
+    600: var(--adstate-red-600),
+    700: var(--adstate-red-700),
+    800: var(--adstate-red-800),
+    900: var(--adstate-red-900),
+    A100: var(--adstate-red-100),
+    A200: var(--color-red-200),
+    A400: var(--adstate-red-400),
+    A700: var(--adstate-red-500),
+    contrast: (
+        50: var(--adstate-shade-100),
+        100: var(--adstate-shade-100),
+        200: var(--adstate-shade-200),
+        300: var(--adstate-shade-300),
+        400: var(--adstate-shade-400),
+        500: var(--adstate-shade-100),
+        600: var(--adstate-shade-200),
+        700: var(--adstate-shade-300),
+        800: var(--adstate-shade-800),
+        900: var(--adstate-shade-900),
+        A100: var(--adstate-shade-100),
+        A200: var(--adstate-shade-200),
+        A400: var(--adstate-shade-400),
+        A700: var(--adstate-shade-100),
+    )
+);
+
+
+$adstate-green: (
+    50: var(--adstate-green-50),
+    100: var(--adstate-green-100),
+    200: var(--adstate-green-200),
+    300: var(--adstate-green-300),
+    400: var(--adstate-green-400),
+    500: var(--adstate-green-500),
+    600: var(--adstate-green-600),
+    700: var(--adstate-green-700),
+    800: var(--adstate-green-800),
+    900: var(--adstate-green-900),
+    A100: var(--adstate-green-100),
+    A200: var(--adstate-green-200),
+    A400: var(--adstate-green-400),
+    A700: var(--adstate-green-500),
+    contrast: (
+        50: var(--adstate-shade-100),
+        100: var(--adstate-shade-100),
+        200: var(--adstate-shade-200),
+        300: var(--adstate-shade-300),
+        400: var(--adstate-shade-400),
+        500: var(--adstate-shade-100),
+        600: var(--adstate-shade-200),
+        700: var(--adstate-shade-300),
+        800: var(--adstate-shade-800),
+        900: var(--adstate-shade-900),
+        A100: var(--adstate-shade-100),
+        A200: var(--adstate-shade-200),
+        A400: var(--adstate-shade-400),
+        A700: var(--adstate-shade-100),
+    )
+);
+
+$adstate-palette-primary: mat-palette($adstate-purple);
+$adstate-palette-accent:  mat-palette($adstate-red);

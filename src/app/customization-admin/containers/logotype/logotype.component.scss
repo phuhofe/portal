@@ -1,0 +1,28 @@
+.logo-container {
+  height: 112px;
+  width: 100%;
+  background-image: url('/assets/images/logotype-background.png');
+  border-radius: 0.5rem;
+}
+
+.trash-icon {
+  float: right;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.logo-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-left {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+

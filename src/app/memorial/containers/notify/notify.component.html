@@ -1,0 +1,38 @@
+<div *ngIf="(!(users$ | async) && !(isLoading$ | async))
+           || ((users$ | async) && (isLoading$ | async))"
+     class="m-5 d-flex justify-content-center"
+     [ngStyle]="{'color': mainColor}">
+
+  <div class="spinner-border" role="status" data-cy="loadingSpinner">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="(users$ | async)
+         && (users$ | async).length === 0
+         && !(isLoading$ | async)" class="position-relative">
+  <strong data-cy="noData"> No data to show </strong>
+</div>
+
+<div>
+  <p class="alert alert-danger mt-3" role="alert"
+     *ngIf="(errorCode$ | async) && !(isLoading$ | async)">
+    <strong>Error Code:</strong>
+    <br>
+    <span data-cy="errorCode">
+      {{ (errorCode$ | async) }}
+    </span>
+  </p>
+
+  <p class="alert alert-danger mt-3" role="alert"
+     *ngIf="(errorMessage$ | async) && !(isLoading$ | async)">
+    <strong>Something happened:</strong> <br>
+    <span  data-cy="errorMessage">
+      {{ (errorMessage$ | async) }}
+    </span>
+  </p>
+
+</div>
+
+<br>
+

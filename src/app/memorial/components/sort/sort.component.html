@@ -1,0 +1,21 @@
+<div class="position-relative" dropdown  placement="bottom right">
+
+  <button id="button-filter" dropdownToggle 
+          type="button" 
+          class="btn btn-filter"
+          aria-controls="dropdown-filter">
+    {{ label }}  <i class="bi bi-arrow-down-up"></i>
+  </button>
+
+  <ul id="dropdown-filter" *dropdownMenu 
+      class="dropdown-menu dropdown-menu-right"
+      role="menu" 
+      aria-labelledby="button-filter">
+    <li role="menuitem" *ngFor="let item of items; let i = index">
+      <div class="dropdown-item">
+        {{ item }}
+      </div>
+    </li>
+  </ul>
+
+  </div>

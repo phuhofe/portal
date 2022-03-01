@@ -1,0 +1,71 @@
+<app-card>
+  <div cardTitle> Layouts</div>
+  <div cardSubtitle>
+    Change the lorem ipsum dolor sit amet. Setting are available lorem.
+  </div>
+  <div cardBody>
+
+    <div class="themes-container my-4">
+
+      <div class="d-flex themes">
+        <div class="standard-layout">
+          <div class="layout-header"></div>
+
+          <ng-container [ngSwitch]="true">
+            <ng-container *ngSwitchDefault>
+              <ng-container *ngTemplateOutlet="standard"></ng-container>
+            </ng-container>
+            <ng-container *ngSwitchCase=" currentTheme === 1">
+              <ng-container *ngTemplateOutlet="newGeneration"></ng-container>
+            </ng-container>
+            <ng-container *ngSwitchCase=" currentTheme === 2">
+              <ng-container *ngTemplateOutlet="netNotice"></ng-container>
+            </ng-container>
+          </ng-container>
+
+        </div>
+
+        <div class="ml-3 ms-3 w-100">
+          <div class="theme-title"> {{ currentThemeName }}</div>
+          <p class="dummy-text">
+            {{ dummyText }}
+          </p>
+          <div class="theme-action mr-3">
+            <button class="active-layout-btn text-uppercase">
+              Active layout
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-selection">
+        <i class="bi bi-chevron-left cursor-pointer" (click)="previousTheme()"></i>
+        <div class="d-flex" *ngFor="let theme of [0,1,2,3]; let i = index">
+          <div class="theme"
+               [ngClass]="{'active': currentTheme === i}"
+               (click)="currentTheme = i; getCurrentThemeName()">
+          </div>
+        </div>
+        <i class="bi bi-chevron-right cursor-pointer" (click)="nextTheme()"></i>
+      </div>
+
+    </div>
+
+
+  </div>
+</app-card>
+
+
+
+<ng-template #standard>
+  <app-standard-template></app-standard-template>
+</ng-template>
+
+<ng-template #newGeneration>
+  <app-new-generation-template></app-new-generation-template>
+</ng-template>
+
+<ng-template #netNotice>
+  <app-net-notice-template></app-net-notice-template>
+</ng-template>
+

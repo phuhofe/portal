@@ -1,0 +1,42 @@
+.btn {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.btn-filter {
+  border-radius: 0.5rem;
+  border: 1px solid #592673;
+  padding: 0rem 0.5rem;
+  color: #592673;
+}
+
+.btn-filter:hover {
+  background: rgb(244 236 249);
+  border: 1px solid #59267308;
+  color: #592673;
+  box-shadow: none;
+  filter: drop-shadow(-2px 4px 2px rgb(244 236 249));
+}
+
+.btn-filter:focus {
+  background: #9540BF;
+  border: 1px solid #59267308;
+  color: #ffffff;
+  box-shadow: none;
+  filter: drop-shadow(-2px 4px 2px #f4ecf9);
+}
+
+.dropdown-item {
+  color: #000;
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
+  background: rgb(244 236 249);
+}
+
+.dropdown-menu {
+  top: 2rem !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+}

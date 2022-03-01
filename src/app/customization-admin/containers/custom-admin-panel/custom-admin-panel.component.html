@@ -1,0 +1,49 @@
+<div class="mt-3 container custom-panel">
+  <div class="row">
+    <app-banner-image 
+      [isDiscardChanges]="!isChanged" 
+      [isSaveSettings]="isSaveSettings"
+      (isChanged)="onChangeBannerImage($event)"
+      >
+    </app-banner-image>
+  </div>
+  <div class="row others">
+
+    <div class=" col-md-5 col-sm-12">
+      <div>
+        <app-search></app-search>
+      </div>
+      <div class="mt-4">
+        <app-colors></app-colors>
+      </div>
+      <div class="mt-4">
+        <app-recent-deceased></app-recent-deceased>
+      </div>
+    </div>
+
+    <div class="col-md-7 col-sm-12">
+      <div>
+        <app-logotype></app-logotype>
+      </div>
+      <div class="mt-4">
+        <app-layouts></app-layouts>
+      </div>
+      <div class="mt-4 mb-4">
+        <app-snippet-link></app-snippet-link>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="container w-100 d-flex justify-content-end">
+
+  <div class="save-settings" *ngIf="isChanged">
+    <app-save-settings 
+      (discardChanges)="onDiscardChanges($event)"
+      (saveSettings)="onSaveSettings($event)">
+    </app-save-settings>
+  </div>
+
+</div>

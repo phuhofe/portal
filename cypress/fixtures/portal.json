@@ -1,0 +1,23 @@
+{
+  "httpFailure": "Http failure response for http://10.2.0.220:8081/portal/search:",
+  "noData": "No data to show",
+  "firstNameLabel": "First name",
+  "lastNameLabel": "Last name",
+  "birthDateRangeLabel": "Birthdate range",
+  "deathDateRangeLabel": "Death date range",
+  "region": "Region",
+  "city": "City",
+  "advancedSearch": "Advanced search",
+  "searchResultsNational": "Search results national",
+  "filter": "Filter",
+  "filterBy": "FilterBy",
+  "memorialPage": "Memorial page",
+  "haveDonations": "Have donations",
+  "hasDeathNotice": "Has death notice",
+  "hasFlowerShop": "Has flower shop",
+  "sort": "Sort",
+  "sortBy": "Sort by",
+  "dateOfBirth": "Date of birth",
+  "dateOfDeath": "Date of death",
+  "mainColor": "rgb(105, 45, 135)"
+}

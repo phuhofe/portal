@@ -1,0 +1,58 @@
+.flag {
+  width: 30px;
+  height: 24.2px;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+}
+
+.language-button {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  width: 155px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  inset: 115% auto auto 0px !important;
+  width: 196px;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  padding-bottom: 1rem;
+}
+
+.dropdown-toggle::after {
+  position: absolute;
+  right: 8px;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
+}
+
+
+.first-item {
+  padding: 0.5rem 1rem;
+  font-weight: normal;
+}
+
+.first-item:hover {
+  background: none;
+}
+
+.first-item::after {
+  content: '';
+  border-bottom: 1px solid #000000;
+  width: 100%;
+  display: block;
+  margin-top: 1rem;
+}
+

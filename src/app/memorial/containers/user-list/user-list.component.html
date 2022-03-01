@@ -1,0 +1,90 @@
+<main class="list-container" [ngClass]="{'h-100': ((users$ | async) && (users$ | async).length < 5)
+                          || (!(users$ | async) && !(isLoading$ | async))}">
+
+  <section class="mt-4">
+    <app-search [searchBackground]="searchBackground"></app-search>
+  </section>
+
+  <div class="user-list">
+
+    <!-- <div class="container sort-filter">
+
+      <h2 class="fs-5">{{ 'portalPage.text.searchResultNational' | transloco }}</h2>
+
+      <div class="sort-filter-container">
+        <div class="filter-container">
+          <label for="portalPage-filter-filter">
+            {{ 'portalPage.filter.filter' | transloco }}
+          </label> <br>
+          <ng-select labelForId="portalPage-filter-filter" #filterSelect [items]="filterItems"
+            [(ngModel)]="selectedFilterOption" [clearable]="false" [editableSearchTerm]="false"
+            (change)="onSelectFilter($event)" data-cy="filter-selection" class="filter">
+            <ng-option *ngFor="let item of filterItems" [value]="item">
+              {{ 'portalPage.filter.' + item.key | translate | async}}
+            </ng-option>
+          </ng-select>
+
+        </div>
+        <div class="sort-container">
+          <label for="portalPage-sort-sort">{{ 'portalPage.sort.sort' | transloco }}</label> <br>
+          <ng-select labelForId="portalPage-sort-sort" [items]="sortItems" #sortSelect [(ngModel)]="selectedSortOption"
+            [clearable]="false" [editableSearchTerm]="false" (change)="onSelectSort($event)" data-cy="sort-selection"
+            class="sort">
+            <ng-option *ngFor="let item of sortItems" [value]="item" data-cy="sort-option-{{item.key}}">
+              {{'portalPage.sort.' + item.key | translate | async}}
+            </ng-option>
+          </ng-select>
+        </div>
+      </div>
+
+    </div> -->
+
+    <div class="container-fluid view-container">
+
+      <div class="view-container-thumbnail"></div>
+
+      <app-notify [mainColor]="mainColor"></app-notify>
+
+      <ng-container *ngIf="(users$ | async)
+                      && (users$ | async).length > 0; let value">
+
+        <section *ngIf="currentView === listViewText; else gridView" class="view">
+          <app-standard-view [users]="(users$ | async)" [end]="displayNumberListView"
+            [displayNumberListView]="displayNumberListView"></app-standard-view>
+        </section>
+
+        <ng-template #gridView>
+          <app-umbra-dumbra-view [users]="(users$ | async)" [displayNumberShadowView]="displayNumberShadowView">
+          </app-umbra-dumbra-view>
+        </ng-template>
+
+      </ng-container>
+
+      <div *ngIf="(users$ | async) === undefined && (isLoading$ | async)" class="m-5 d-flex justify-content-center"
+        [ngStyle]="{'color': mainColor}">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container-fluid text-center">
+      <button *ngIf="(users$ | async)" class="btn btn-primary mb-5 mt-4 position-relative load-more-btn"
+        (click)="loadMore()">
+
+        <ng-container *ngIf="((users$ | async) && (isLoading$ | async)); else loadMoreResult">
+          {{ 'portalPage.button.loadingMore' | transloco }}
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </ng-container>
+
+        <ng-template #loadMoreResult>
+          <span>{{ 'portalPage.button.loadMore' | transloco }}</span>
+        </ng-template>
+      </button>
+    </div>
+
+  </div>
+
+
+</main>
